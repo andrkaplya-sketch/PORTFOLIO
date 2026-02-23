@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANDRII KAPLIA | Videographer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Базовые настройки */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Шапка */
+        header {
+            text-align: center;
+            padding: 15px 10px;
+            background-color: #000;
+        }
+
+        header h1 {
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        /* Сетка для коллажа */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            width: 100%;
+        }
+
+        /* Базовый блок видео */
+        .video-item {
+            position: relative;
+            background-color: #111;
+            overflow: hidden;
+            display: flex;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* Эффект при наведении */
+        .video-item:hover::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            pointer-events: none;
+            transition: background 0.3s ease;
+        }
+
+        /* Размеры блоков */
+        .span-4 { grid-column: span 4; aspect-ratio: 21 / 9; }
+        .span-4.tall { aspect-ratio: 18 / 9; }
+        .span-2 { grid-column: span 2; aspect-ratio: 16 / 9; }
+        .span-1 { grid-column: span 1; aspect-ratio: 5 / 7; }
+
+        /* Контент: Видео и картинки */
+        .video-item video,
+        .video-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Зум контента внутри блока без изменения самого блока */
+        .zoom-inner video,
+        .zoom-inner img {
+            transform: scale(1.42);
+        }
+
+        /* Тень и текст поверх визуала */
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+            padding: 25px 20px 15px;
+            z-index: 2;
+        }
+
+        .overlay .title {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 2px;
+            letter-spacing: 0.02em;
+        }
+
+        .overlay .subtitle {
+            font-size: 0.9rem;
+            font-weight: 200;
+            color: #eaeaea;
+        }
+
+        /* Подвал */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #000;
+            font-size: 0.8rem;
+            font-weight: 200;
+            color: #fff;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 25px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Адаптация под телефоны */
+        @media (max-width: 768px) {
+            .grid-container {
+                display: flex;
+                flex-direction: column;
+            }
+            .video-item {
+                aspect-ratio: 16 / 9;
+            }
+            .span-1 { aspect-ratio: 5 / 7; }
+            .span-4.tall { aspect-ratio: 16 / 9; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Andrii Kaplia</h1>
+    </header>
+
+    <main class="grid-container">
+        
+        <a href="https://youtu.be/sRGOvIDVE94?si=eCqqcnyPpmzgtCqK" target="_blank" class="video-item span-4">
+            <video src="files/Music video Painfully Alive.m4v" autoplay muted loop playsinline></video>
+            <div class="overlay">
+                <span class="title">PAINFULLY ALIVE</span>
+                <span class="subtitle">Music video</span>
+            </div>
+        </a>
+
+        <a href="https://youtu.be/zSz_THqWE0A?si=Mq_q9CvhlF-ehPyn" target="_blank" class="video-item span-2">
+            <img src="files/Music video Get off Me.webp" alt="GET OFF ME">
+            <div class="overlay">
+                <span class="title">GET OFF ME</span>
+                <span class="subtitle">Music video</span>
+            </div>
+        </a>
+
+        <a href="https://youtu.be/gZIBObxKs6A?si=4BOgL4nxnn2tGFpg" target="_blank" class="video-item span-2">
+            <img src="files/Music video ALLES IST WIE ES IST.webp" alt="ALLES IST WIE ES IST">
+            <div class="overlay">
+                <span class="title">ALLES IST WIE ES IST</span>
+                <span class="subtitle">Music video</span>
+            </div>
+        </a>
+
+        <a href="https://www.instagram.com/reel/DQZMQ-lk-uY/?igsh=aG5lNW92NW5saDVx" target="_blank" class="video-item span-1">
+            <img src="files/Reels its alright 1.jpg" alt="ITS ALRIGHT">
+            <div class="overlay">
+                <span class="title">IT'S ALRIGHT</span>
+                <span class="subtitle">Reels</span>
+            </div>
+        </a>
+
+        <a href="https://vm.tiktok.com/ZNR5rKFx8/" target="_blank" class="video-item span-1">
+            <img src="files/Reels its alright 2.jpg" alt="ITS ALRIGHT">
+            <div class="overlay">
+                <span class="title">IT'S ALRIGHT</span>
+                <span class="subtitle">Reels</span>
+            </div>
+        </a>
+
+        <a href="https://www.instagram.com/reel/DQXErLWiHg7/?igsh=MWN1amE0aTQxdTJzdQ==" target="_blank" class="video-item span-1">
+            <img src="files/Reels orchids.jpg" alt="ORCHIDS">
+            <div class="overlay">
+                <span class="title">ORCHIDS</span>
+                <span class="subtitle">Reels</span>
+            </div>
+        </a>
+
+        <a href="https://www.instagram.com/reel/C8w0ZojMR1f/" target="_blank" class="video-item span-1">
+            <img src="files/Reels griaz.jpg" alt="GRIAZ">
+            <div class="overlay">
+                <span class="title">GRIAZ</span>
+                <span class="subtitle">Reels</span>
+            </div>
+        </a>
+
+        <a href="https://youtu.be/AMpScs_LjzU?si=ar3ALGuQTBkyyngl" target="_blank" class="video-item span-4 tall">
+            <video src="files/Live video ROSADAMASK.m4v" autoplay muted loop playsinline></video>
+            <div class="overlay">
+                <span class="title">ROSADAMASK</span>
+                <span class="subtitle">Live video</span>
+            </div>
+        </a>
+
+        <a href="https://youtu.be/ukUmagWLkpE?si=tMjv4U2HgS7FHOKQ" target="_blank" class="video-item span-2 zoom-inner">
+            <video src="files/Music video DEAD WALLS.m4v" autoplay muted loop playsinline></video>
+            <div class="overlay">
+                <span class="title">DEAD WALLS</span>
+                <span class="subtitle">Music video</span>
+            </div>
+        </a>
+
+        <a href="https://youtu.be/H5sFwUHKyEA" target="_blank" class="video-item span-2 zoom-inner">
+            <img src="files/Campaign 10 EUR.webp" alt="10 EUR">
+            <div class="overlay">
+                <span class="title">10 EUR</span>
+                <span class="subtitle">Campaign</span>
+            </div>
+        </a>
+
+        <a href="https://youtu.be/N3mIjTD8-UY?si=5lr1l00uuKY0YQ9E" target="_blank" class="video-item span-2">
+            <img src="files/Documentary VYSHEL POKURIT.webp" alt="VYSHEL POKURIT">
+            <div class="overlay">
+                <span class="title">VYSHEL POKURIT</span>
+                <span class="subtitle">Documentary</span>
+            </div>
+        </a>
+
+        <a href="https://youtu.be/2SUDTaYXs9Y?si=H064eUySgp-6FQtD" target="_blank" class="video-item span-2">
+            <img src="files/Music video VETER PEREMEN.webp" alt="VETER PEREMEN">
+            <div class="overlay">
+                <span class="title">VETER PEREMEN</span>
+                <span class="subtitle">Music video</span>
+            </div>
+        </a>
+
+        <a href="https://vm.tiktok.com/ZNR5h5NAd/" target="_blank" class="video-item span-1">
+            <img src="files/Reels SHEBEN.jpg" alt="SHEBEN">
+            <div class="overlay">
+                <span class="title">SHEBEN</span>
+                <span class="subtitle">Reels</span>
+            </div>
+        </a>
+
+        <a href="https://www.instagram.com/reel/DObFhBcDCms/?igsh=MXh0a2ZmMWNmamRraQ==" target="_blank" class="video-item span-1">
+            <img src="files/Reels live MY MOON.jpg" alt="MY MOON">
+            <div class="overlay">
+                <span class="title">MY MOON</span>
+                <span class="subtitle">Reels live</span>
+            </div>
+        </a>
+
+        <a href="https://www.instagram.com/reel/DR4T7SRjOXW/?igsh=MTllZ3dzOXJtbHpocg==" target="_blank" class="video-item span-1">
+            <img src="files/Reels KILLER SMILE.jpg" alt="KILLER SMILE">
+            <div class="overlay">
+                <span class="title">KILLER SMILE</span>
+                <span class="subtitle">Reels</span>
+            </div>
+        </a>
+
+        <a href="https://www.instagram.com/reel/DOGydBpDOkh/?igsh=a2dmMDVsdTc5cW5k" target="_blank" class="video-item span-1">
+            <img src="files/Reels MY MOON.jpg" alt="MY MOON">
+            <div class="overlay">
+                <span class="title">MY MOON</span>
+                <span class="subtitle">Reels</span>
+            </div>
+        </a>
+
+        <a href="https://youtu.be/XBL9Mv8Ezms?si=ZJH5omZ0OhqulFZV" target="_blank" class="video-item span-2">
+            <img src="files/Music video FEELING LOW.webp" alt="FEELING LOW">
+            <div class="overlay">
+                <span class="title">FEELING LOW</span>
+                <span class="subtitle">Music video</span>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=dcNymuI5ZzU&feature=youtu.be" target="_blank" class="video-item span-2">
+            <video src="files/Documentary MERCEDES DANCE.m4v" autoplay muted loop playsinline></video>
+            <div class="overlay">
+                <span class="title">MERCEDES DANCE</span>
+                <span class="subtitle">Documentary</span>
+            </div>
+        </a>
+
+        <a href="#" class="video-item span-4">
+            <video src="files/Music video WEGEN DIR.m4v" autoplay muted loop playsinline></video>
+            <div class="overlay">
+                <span class="title">WEGEN DIR</span>
+                <span class="subtitle">Music video</span>
+            </div>
+        </a>
+
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            <a href="mailto:andrkaplya@gmail.com">CONTACT</a>
+            <a href="https://www.instagram.com/kaplia_terrikon/" target="_blank">Instagram</a>
+        </div>
+        <div class="footer-right">
+            &copy; 2026 Andrii Kaplia
+        </div>
+    </footer>
+
+</body>
+</html>
